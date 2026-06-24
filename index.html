@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CIM | Chamber of Industries Morang</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Swiper JS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Google Fonts: Manrope & Montserrat -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <!-- Custom CSS (reusable) -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+
+    <!-- ============================================================
+    TOP BAR – Upcoming event (cancellable)
+    ============================================================ -->
+    <div id="topEventBar" class="top-event-bar">
+        <div class="event-text">
+            <i class="bi bi-megaphone-fill"></i>
+            <span><strong>Upcoming:</strong> Industry 5.0 Summit – Digital Transformation in Manufacturing</span>
+            <span class="event-date">📅 15–17 July 2026</span>
+        </div>
+        <button class="close-event" id="closeEventBtn" aria-label="Close event banner">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <!-- ============================================================
+    NAVBAR with MEGA MENU - Search in main navbar
+    ============================================================ -->
+        <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">C<span>IM</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+
+                        <!-- MEGA MENU dropdown -->
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button">
+                                Programs
+                            </a>
+                            <div class="dropdown-menu mega-menu" aria-labelledby="programsDropdown">
+                                <div class="container">
+                                    <div class="row g-4">
+                                        <!-- Column 1 -->
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <h6>BANNERS</h6>
+                                            <a href="#">Home</a>
+                                            <a href="#">Banners</a>
+                                        </div>
+                                        <!-- Column 2 -->
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <h6>ABOUT US</h6>
+                                            <a href="#">Home</a>
+                                            <a href="#">Banners</a>
+                                        </div>
+                                        <!-- Column 3 -->
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <h6>PROGRAMS</h6>
+                                            <a href="#">Programs</a>
+                                            <a href="#">Gallery</a>
+                                        </div>
+                                        <!-- Column 4 -->
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <h6>MEMBERSHIP</h6>
+                                            <a href="#">Member Registration</a>
+                                            <a href="#">Membership Eligibility</a>
+                                            <a href="#">Members Database</a>
+                                        </div>
+                                        <!-- Column 5 - Resources (will wrap to next row on large) -->
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <h6>RESOURCES</h6>
+                                            <a href="#">Important Links</a>
+                                            <a href="#">Facts and Newsletter</a>
+                                            <a href="#">Reports and Other Documents</a>
+                                            <a href="#">Rules &amp; Regulations</a>
+                                            <a href="#">Member Circulation</a>
+                                            <a href="#">Media</a>
+                                        </div>
+                                        <!-- Column 6 - Events -->
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <h6>EVENTS</h6>
+                                            <div class="event-mini-card">
+                                                <span class="badge bg-primary-color">Industry 5.0</span>
+                                                <p class="small mb-0 mt-1"><strong>Summit 2026</strong></p>
+                                                <p class="small text-muted">Digital transformation in manufacturing -
+                                                    register now.</p>
+                                                <a href="#" class="small text-primary-color">Learn More <i
+                                                        class="bi bi-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+
+                        <!-- Search in main navbar -->
+                        <li class="nav-item search-nav-item d-none d-lg-block">
+                            <div class="search-box-nav">
+                                <input type="text" placeholder="Search..." class="form-control form-control-sm" />
+                                <button class="btn btn-primary-custom btn-sm"><i class="bi bi-search"></i></button>
+                            </div>
+                        </li>
+
+                        <!-- <li class="nav-item ms-lg-2">
+                            <a href="#" class="btn btn-primary-custom btn-sm">Enquire Now</a>
+                        </li> -->
+
+                        <!-- Search for mobile at bottom of menu -->
+                        <li class="nav-item d-block d-lg-none search-mobile-item">
+                            <div class="search-box-mobile">
+                                <input type="text" placeholder="Search..." class="form-control" />
+                                <button class="btn btn-primary-custom"><i class="bi bi-search"></i> Search</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <main>
+        <!-- ============================================================
+    SECTION 1: HERO SLIDER (Swiper) - Full screen
+    ============================================================ -->
+        <section class="hero-slider-section">
+            <div class="swiper heroSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide"
+                        style="background-image: url('https://www.cim.org.np/images/slider/Cover-Photos.jpg');">
+                        <div class="container slide-content">
+                            <span class="badge-slide">CIM 2026</span>
+                            <h1>Driving Industrial <br><span style="color:var(--primary-color);">Growth in Nepal</span>
+                            </h1>
+                            <p class="lead">Empowering businesses through policy advocacy, networking, and development.
+                            </p>
+                            <a href="#" class="btn btn-primary-custom mt-3">Explore More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide"
+                        style="background-image: url('https://www.cim.org.np/images/slider/2.webp');">
+                        <div class="container slide-content">
+                            <span class="badge-slide">Membership</span>
+                            <h1>Become a <span style="color:var(--primary-color);">CIM Member</span></h1>
+                            <p class="lead">Join 500+ industries and shape the future of Province No. 1.</p>
+                            <a href="#" class="btn btn-primary-custom mt-3">Apply Now <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide"
+                        style="background-image: url('https://www.cim.org.np/images/slider/1.webp');">
+                        <div class="container slide-content">
+                            <span class="badge-slide">Events</span>
+                            <h1>Industry 5.0 <br><span style="color:var(--primary-color);">Summit 2026</span></h1>
+                            <p class="lead">Digital transformation in manufacturing – register now.</p>
+                            <a href="#" class="btn btn-primary-custom mt-3">Register <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+    SECTION 2: WELCOME (with image)
+    ============================================================ -->
+        <section class="section-padding welcome-section">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6" data-scroll-reveal>
+                        <span class="section-label">Welcome to CIM</span>
+                        <h2 class="section-title">Chamber of Industries Morang</h2>
+                        <p class="lead text-muted">Established in 1988, CIM is the leading business membership
+                            organization
+                            in Province No. 1, representing private sector interests and driving industrial development.
+                        </p>
+                        <p class="text-muted">With over 500 member industries, we provide a unified voice for the
+                            private
+                            sector, advocating for policies that foster economic growth, job creation, and sustainable
+                            development. Our platform connects businesses, facilitates investment, and promotes Nepal's
+                            industrial potential on a global stage.</p>
+                        <div class="row mt-4 g-3">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-2"><i
+                                        class="bi bi-check-circle-fill text-primary-color"></i> 500+ Members</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-2"><i
+                                        class="bi bi-check-circle-fill text-primary-color"></i> 35+ Years of Service
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-2"><i
+                                        class="bi bi-check-circle-fill text-primary-color"></i> Policy Advocacy</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-2"><i
+                                        class="bi bi-check-circle-fill text-primary-color"></i> Investment Facilitation
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline-custom mt-4">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="col-lg-6" data-scroll-reveal>
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80"
+                            alt="Welcome to CIM" class="img-fluid rounded shadow-sm w-100" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+    SECTION 3: ABOUT (brief)
+    ============================================================ -->
+        <section class="section-padding bg-light-soft">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 order-1 order-lg-0" data-scroll-reveal>
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80"
+                            alt="About CIM" class="img-fluid rounded shadow-sm w-100" />
+                    </div>
+                    <div class="col-lg-6 order-0 order-lg-1" data-scroll-reveal>
+                        <span class="section-label">About Us</span>
+                        <h2 class="section-title">Empowering Industries <br>for a Progressive Nepal</h2>
+                        <p class="text-muted">CIM implements programs ranging from issue-based policy advocacy to
+                            business
+                            development and investment promotion. We are affiliated with FNCC as the apex body of the
+                            Nepalese private sector.</p>
+                        <p class="text-muted">Our commitment to excellence has made us the trusted voice of industry,
+                            working tirelessly to create an enabling environment for business growth and economic
+                            prosperity.</p>
+                        <a href="#" class="btn btn-outline-custom mt-3">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+    SECTION 4: MESSAGE FROM THE PRESIDENT
+    ============================================================ -->
+        <section class="section-padding message-section">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-4 text-center" data-scroll-reveal>
+                        <div class="president-card">
+                            <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="President"
+                                class="president-image" />
+                            <h4 class="mt-3">Mr. Bishnu P. Adhikari</h4>
+                            <p class="text-muted">President, CIM</p>
+                            <div class="social-links small mt-2">
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                <a href="#"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8" data-scroll-reveal>
+                        <span class="section-label">Message from the President</span>
+                        <h2 class="section-title">Committed to Industrial Progress</h2>
+                        <div class="message-content">
+                            <blockquote class="fs-5 fst-italic border-start border-4 border-primary-color ps-4">
+                                “CIM is dedicated to demystify progressive Nepal through the promotion and development
+                                of
+                                economic and industrial sectors. We work tirelessly to support our members and advocate
+                                for
+                                a thriving business environment.”
+                            </blockquote>
+                            <p class="text-muted">With over three decades of service, CIM remains the trusted voice of
+                                industry. Our focus on policy advocacy, business development, and investment
+                                facilitation
+                                has helped shape the industrial landscape of Province No. 1.</p>
+                            <p class="text-muted">We invite all stakeholders to join us in our mission to build a
+                                progressive and prosperous Nepal through industrial growth and innovation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+    SECTION 5: CIM PLATFORMS
+    ============================================================ -->
+        <section class="section-padding bg-light-soft">
+            <div class="container">
+                <div class="text-center mb-5" data-scroll-reveal>
+                    <span class="section-label">Our Network</span>
+                    <h2 class="section-title">CIM Platforms</h2>
+                    <p class="text-muted">Explore our associated platforms and partner organizations.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-3" data-scroll-reveal>
+                        <div class="platform-card text-center">
+                            <div class="platform-logo bg-white p-3 rounded shadow-sm">
+                                <i class="bi bi-building display-4 text-primary-color"></i>
+                            </div>
+                            <h6 class="mt-3">FNCC</h6>
+                            <p class="small text-muted">Apex Body</p>
+                            <a href="#" class="small text-primary-color">Visit <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3" data-scroll-reveal>
+                        <div class="platform-card text-center">
+                            <div class="platform-logo bg-white p-3 rounded shadow-sm">
+                                <i class="bi bi-graph-up display-4 text-primary-color"></i>
+                            </div>
+                            <h6 class="mt-3">Nepal Trade</h6>
+                            <p class="small text-muted">Export Promotion</p>
+                            <a href="#" class="small text-primary-color">Visit <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3" data-scroll-reveal>
+                        <div class="platform-card text-center">
+                            <div class="platform-logo bg-white p-3 rounded shadow-sm">
+                                <i class="bi bi-people display-4 text-primary-color"></i>
+                            </div>
+                            <h6 class="mt-3">Industry Forum</h6>
+                            <p class="small text-muted">Policy Advocacy</p>
+                            <a href="#" class="small text-primary-color">Visit <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3" data-scroll-reveal>
+                        <div class="platform-card text-center">
+                            <div class="platform-logo bg-white p-3 rounded shadow-sm">
+                                <i class="bi bi-globe2 display-4 text-primary-color"></i>
+                            </div>
+                            <h6 class="mt-3">Invest Nepal</h6>
+                            <p class="small text-muted">Investment Hub</p>
+                            <a href="#" class="small text-primary-color">Visit <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+    SECTION 6: UPCOMING EVENTS
+    ============================================================ -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center mb-5" data-scroll-reveal>
+                    <span class="section-label">Stay Updated</span>
+                    <h2 class="section-title">Upcoming Events</h2>
+                    <p class="text-muted">Join us at our flagship events and programs.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4" data-scroll-reveal>
+                        <div class="card-custom">
+                            <span class="badge bg-primary-color mb-2">July 2026</span>
+                            <h5>Industry 5.0 Summit</h5>
+                            <p class="text-muted small">15–17 July · Kathmandu</p>
+                            <p>Digital transformation in manufacturing – keynotes, panels, and networking.</p>
+                            <a href="#" class="text-primary-color fw-semibold">Register <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-scroll-reveal>
+                        <div class="card-custom">
+                            <span class="badge bg-primary-color mb-2">August 2026</span>
+                            <h5>Trade Policy Workshop</h5>
+                            <p class="text-muted small">5–6 August · Biratnagar</p>
+                            <p>Advocacy workshop on export incentives and trade facilitation.</p>
+                            <a href="#" class="text-primary-color fw-semibold">Learn More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-scroll-reveal>
+                        <div class="card-custom">
+                            <span class="badge bg-primary-color mb-2">September 2026</span>
+                            <h5>Annual General Meeting</h5>
+                            <p class="text-muted small">20 September · CIM Hall</p>
+                            <p>Members' assembly, annual report, and election of new executive committee.</p>
+                            <a href="#" class="text-primary-color fw-semibold">Details <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+    SECTION 7: CTA (with parallax)
+    ============================================================ -->
+        <section class="cta-section"
+            style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80');">
+            <div class="cta-overlay">
+                <div class="container text-center">
+                    <div data-scroll-reveal>
+                        <span class="section-label" style="color:var(--primary-color);">Join Us</span>
+                        <h2 class="section-title" style="color:#fff;">Become a CIM Member Today</h2>
+                        <p class="lead" style="color:rgba(255,255,255,0.9);">Join 500+ industries and help shape a
+                            progressive Nepal.</p>
+                        <a href="#" class="btn btn-primary-custom btn-lg mt-3">Apply for Membership <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+    SECTION 8: NEWS & BLOG
+    ============================================================ -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center mb-5" data-scroll-reveal>
+                    <span class="section-label">Insights</span>
+                    <h2 class="section-title">News & Blog</h2>
+                    <p class="text-muted">Latest updates, articles, and press releases from CIM.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4" data-scroll-reveal>
+                        <div class="card-custom h-100">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80"
+                                alt="Industry 4.0" class="card-img-top rounded mb-3"
+                                style="height:180px; object-fit:cover;" />
+                            <span class="badge bg-primary-color mb-2">Industry 4.0</span>
+                            <h5>Industry 4.0: A Path to Digital Transformation</h5>
+                            <p class="text-muted small">June 24, 2026</p>
+                            <p>Exploring the future of manufacturing and smart factories in Nepal.</p>
+                            <a href="#" class="text-primary-color fw-semibold">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-scroll-reveal>
+                        <div class="card-custom h-100">
+                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80" alt="Policy"
+                                class="card-img-top rounded mb-3" style="height:180px; object-fit:cover;" />
+                            <span class="badge bg-primary-color mb-2">Policy</span>
+                            <h5>New Trade Policy Advocacy Workshop</h5>
+                            <p class="text-muted small">June 18, 2026</p>
+                            <p>CIM leads dialogue on export incentives and trade facilitation.</p>
+                            <a href="#" class="text-primary-color fw-semibold">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-scroll-reveal>
+                        <div class="card-custom h-100">
+                            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=600&q=80"
+                                alt="Member Spotlight" class="card-img-top rounded mb-3"
+                                style="height:180px; object-fit:cover;" />
+                            <span class="badge bg-primary-color mb-2">Member</span>
+                            <h5>Member Spotlight: ABC Industries</h5>
+                            <p class="text-muted small">June 10, 2026</p>
+                            <p>How ABC Industries doubled exports with CIM support.</p>
+                            <a href="#" class="text-primary-color fw-semibold">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+    SECTION 9: MAP (full width)
+    ============================================================ -->
+        <section class="map-section">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.0930699999997!2d85.324!3d27.700!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a3f2c5d0b%3A0x5e7f4b8a5f2c5d0b!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2sus!4v1700000000000"
+                width="100%" height="400" style="border:0; display:block;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+
+        <!-- ============================================================
+    SECTION 10: FOOTER
+    ============================================================ -->
+    </main>
+
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h5>C<span style="color:var(--primary-color);">IM</span></h5>
+                    <p>Chamber of Industries Morang – established 1988, leading business membership organization in
+                        Province No. 1, Nepal.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>Quick Links</h5>
+                    <a href="#" class="d-block">About</a>
+                    <a href="#" class="d-block">Admissions</a>
+                    <a href="#" class="d-block">Scholarships</a>
+                    <a href="#" class="d-block">Placement</a>
+                    <a href="#" class="d-block">Alumni</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>Programs</h5>
+                    <a href="#" class="d-block">BBA</a>
+                    <a href="#" class="d-block">MBA</a>
+                    <a href="#" class="d-block">BIM</a>
+                    <a href="#" class="d-block">Executive Ed.</a>
+                    <a href="#" class="d-block">Short Courses</a>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact</h5>
+                    <p><i class="bi bi-geo-alt me-2"></i> Putali Sadak, Kathmandu, Nepal</p>
+                    <p><i class="bi bi-telephone me-2"></i> +977-1-4412345</p>
+                    <p><i class="bi bi-envelope me-2"></i> info@cim.org.np</p>
+                    <p><i class="bi bi-clock me-2"></i> Mon–Fri: 8:00 AM – 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 Chamber of Industries Morang. All rights reserved.</p>
+                <p class="credit">Developed by Yagya</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- ScrollReveal JS -->
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
