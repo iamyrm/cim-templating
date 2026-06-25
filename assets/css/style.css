@@ -7,6 +7,7 @@
     --color-gray: #dedede;
     --color-black: #080808;
     --color-white: #F9F8F6;
+    --color-pure-white: #fff;
     --font-primary: 'Manrope', Arial, Helvetica, sans-serif;
     --font-secondary: 'Montserrat', Arial, Helvetica, sans-serif;
     --shadow-sm: 0 2px 8px rgba(15, 26, 46, 0.06);
@@ -32,6 +33,12 @@ body {
     background: var(--color-white);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    width: 100%;
+    max-width: 100%;
+}
+
+main {
+    overflow-x: hidden;
 }
 
 a {
@@ -87,12 +94,21 @@ h5 {
     background: #f5f2ed;
 }
 
+.custom-red {
+    color: var(--primary-color);
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 /* ============================================================
    TOP EVENT BAR
    ============================================================ */
 .top-event-bar {
     background: var(--secondary-color);
-    color: #fff;
+    color: var(--color-pure-white);
     padding: 8px 0;
     display: flex;
     align-items: center;
@@ -122,7 +138,7 @@ h5 {
     border-radius: 20px;
     font-weight: 600;
     font-size: 0.75rem;
-    color: #fff;
+    color: var(--color-pure-white);
 }
 
 .top-event-bar .close-event {
@@ -136,7 +152,7 @@ h5 {
 }
 
 .top-event-bar .close-event:hover {
-    color: #fff;
+    color: var(--color-pure-white);
     transform: scale(1.1);
 }
 
@@ -144,7 +160,7 @@ h5 {
    NAVBAR WITH MEGA MENU
    ============================================================ */
 /* .navbar-custom {
-    background: #fff;
+    background: var( --color-pure-white);
     box-shadow: var(--shadow-sm);
     padding: 12px 0;
     border-bottom: 1px solid var(--color-gray);
@@ -153,7 +169,7 @@ h5 {
 } */
 
 .navbar-custom {
-    background: #fff;
+    background: var(--color-pure-white);
     box-shadow: var(--shadow-sm);
     padding: 12px 0;
     border-bottom: 1px solid var(--color-gray);
@@ -222,7 +238,7 @@ h5 {
     box-shadow: var(--shadow-lg);
     margin-top: 0;
     display: none;
-    background: #fff;
+    background: var(--color-pure-white);
     left: 0;
     right: 0;
 }
@@ -328,7 +344,7 @@ h5 {
    ============================================================ */
 .btn-primary-custom {
     background: var(--primary-color);
-    color: #fff;
+    color: var(--color-pure-white);
     border: none;
     padding: 12px 32px;
     font-weight: 600;
@@ -339,7 +355,7 @@ h5 {
 
 .btn-primary-custom:hover {
     background: var(--secondary-color);
-    color: #fff;
+    color: var(--color-pure-white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -357,14 +373,14 @@ h5 {
 
 .btn-outline-custom:hover {
     background: var(--primary-color);
-    color: #fff;
+    color: var(--color-pure-white);
 }
 
 /* ============================================================
    CARDS
    ============================================================ */
 .card-custom {
-    background: #fff;
+    background: var(--color-pure-white);
     border: 1px solid var(--color-gray);
     border-radius: var(--radius);
     transition: var(--transition);
@@ -417,7 +433,7 @@ h5 {
 .heroSwiper .slide-content {
     position: relative;
     z-index: 2;
-    color: #fff;
+    color: var(--color-pure-white);
     /* max-width: 700px; */
 }
 
@@ -440,7 +456,7 @@ h5 {
 }
 
 .heroSwiper .swiper-pagination-bullet {
-    background: #fff;
+    background: var(--color-pure-white);
     opacity: 0.6;
 }
 
@@ -451,7 +467,7 @@ h5 {
 
 .heroSwiper .swiper-button-next,
 .heroSwiper .swiper-button-prev {
-    color: #fff;
+    color: var(--color-pure-white);
     background: rgba(0, 0, 0, 0.25);
     width: 44px;
     height: 44px;
@@ -473,7 +489,7 @@ h5 {
    MESSAGE SECTION
    ============================================================ */
 .message-section {
-    background: #fff;
+    background: var(--color-pure-white);
 }
 
 .president-card {
@@ -505,7 +521,7 @@ h5 {
     padding: 20px 12px;
     transition: var(--transition);
     border-radius: var(--radius);
-    background: #fff;
+    background: var(--color-pure-white);
     border: 1px solid var(--color-gray);
     font-family: var(--font-primary);
 }
@@ -574,11 +590,17 @@ h5 {
     color: rgba(255, 255, 255, 0.7);
     padding: 60px 0 20px;
     font-family: var(--font-primary);
+    overflow: hidden;
+}
+
+.footer-custom .row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .footer-custom h5 {
     font-family: var(--font-secondary);
-    color: #fff;
+    color: var(--color-pure-white);
     margin-bottom: 20px;
     font-weight: 700;
 }
@@ -593,7 +615,8 @@ h5 {
     color: var(--primary-color);
 }
 
-.footer-custom .social-links a {
+.footer-custom .social-links a,
+.other-social-links {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -603,12 +626,19 @@ h5 {
     background: rgba(255, 255, 255, 0.06);
     transition: var(--transition);
     margin-right: 8px;
-    color: #fff;
+    color: var(--color-pure-white);
 }
 
-.footer-custom .social-links a:hover {
+.other-social-links {
+    /* background-color: green;
+    color: green; */
+    background: var(--color-pure-white);
+}
+
+.footer-custom .social-links a:hover,
+.other-social-links:hover {
     background: var(--primary-color);
-    color: #fff;
+    color: var(--color-pure-white);
 }
 
 .footer-bottom {
@@ -632,12 +662,6 @@ h5 {
     font-size: 0.85rem;
 }
 
-@media (max-width: 768px) {
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-}
 
 /* ============================================================
    UTILITY
@@ -654,61 +678,39 @@ h5 {
     background-color: var(--primary-color);
 }
 
+
 /* ============================================================
-   RESPONSIVE - MEGA MENU COLUMNS
+   RESPONSIVE - GENERAL
    ============================================================ */
-/* Small: 1 col, Medium: 2 col, Large: 4 col */
+
 @media (max-width: 576px) {
+    .hero-slider-section {
+        height: 50vh;
+        min-height: 300px;
+    }
+
+    .platform-card {
+        padding: 12px 8px;
+    }
+
+    .platform-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .heroSwiper .swiper-button-next,
+    .heroSwiper .swiper-button-prev {
+        display: none;
+    }
+
+    /* Mega menu */
     .mega-dropdown .dropdown-menu .row .col-12 {
         flex: 0 0 100%;
         max-width: 100%;
     }
 }
 
-/* Medium devices */
-@media (max-width: 992px) {
-    .mega-dropdown:hover .dropdown-menu {
-        display: none;
-    }
 
-    .mega-dropdown .dropdown-menu {
-        display: none;
-        padding: 20px 16px;
-        max-height: 70vh;
-        overflow-y: auto;
-    }
-
-    .mega-dropdown .dropdown-menu.show {
-        display: block;
-    }
-
-    .mega-dropdown .dropdown-menu .row .col-md-6 {
-        margin-bottom: 16px;
-    }
-
-    /* Fix scrolling issue - prevent body scroll when menu is open */
-    .navbar-collapse.show {
-        max-height: calc(100vh - 80px);
-        overflow-y: auto;
-        padding-bottom: 20px;
-    }
-
-    .navbar-collapse.collapsing {
-        overflow-y: hidden;
-    }
-}
-
-/* Large devices - 4 cols */
-@media (min-width: 992px) {
-    .mega-dropdown .dropdown-menu .row .col-lg-3 {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-}
-
-/* ============================================================
-   RESPONSIVE - GENERAL
-   ============================================================ */
 @media (max-width: 768px) {
     .hero-slider-section {
         height: 60vh;
@@ -754,43 +756,12 @@ h5 {
     .search-box-nav input {
         width: 120px;
     }
-}
 
-@media (max-width: 576px) {
-    .hero-slider-section {
-        height: 50vh;
-        min-height: 300px;
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .platform-card {
-        padding: 12px 8px;
-    }
-
-    .platform-logo {
-        width: 60px;
-        height: 60px;
-    }
-
-    .heroSwiper .swiper-button-next,
-    .heroSwiper .swiper-button-prev {
-        display: none;
-    }
-}
-
-/* ----------------------------  */
-
-
-
-/* ===== FIX WIDTH OVERFLOW ===== */
-html,
-body {
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100%;
-}
-
-/* Fix rows with large gaps on small screens */
-@media (max-width: 768px) {
     .row.g-5 {
         --bs-gutter-x: 1.5rem;
         margin-left: calc(-0.75rem);
@@ -803,18 +774,49 @@ body {
     }
 }
 
-/* Fix footer */
-.footer-custom {
-    overflow: hidden;
+/* ============================================================
+   RESPONSIVE - MEGA MENU COLUMNS
+   ============================================================ */
+
+/* Medium devices */
+@media (max-width: 992px) {
+    .mega-dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .mega-dropdown .dropdown-menu {
+        display: none;
+        padding: 20px 16px;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .mega-dropdown .dropdown-menu.show {
+        display: block;
+    }
+
+    .mega-dropdown .dropdown-menu .row .col-md-6 {
+        margin-bottom: 16px;
+    }
+
+    /* Fix scrolling issue - prevent body scroll when menu is open */
+    .navbar-collapse.show {
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        padding-bottom: 20px;
+    }
+
+    .navbar-collapse.collapsing {
+        overflow-y: hidden;
+    }
 }
 
-.footer-custom .row {
-    margin-left: 0;
-    margin-right: 0;
+/* Large devices - 4 cols */
+@media (min-width: 992px) {
+    .mega-dropdown .dropdown-menu .row .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
 }
 
-/* Fix container padding */
-.container {
-    padding-left: 15px;
-    padding-right: 15px;
-}
+/* ----------------------------  */
